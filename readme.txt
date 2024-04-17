@@ -1,0 +1,1 @@
+Witqj w tym miejscu znajdziesz poradnik w wykorzystywaniu naszej aplikacji.
