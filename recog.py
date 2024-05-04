@@ -1,5 +1,6 @@
 import cv2
 import face_recognition
+
 def find_face_encodings(image_path):
     # reading image
     image = cv2.imread(image_path)
