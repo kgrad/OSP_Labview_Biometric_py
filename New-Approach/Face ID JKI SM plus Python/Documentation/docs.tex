@@ -1,0 +1,119 @@
+\documentclass{report}
+\usepackage{tocloft}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\geometry{
+    a4paper,
+    left=2.5cm,
+    right=2.5cm,
+    top=2.5cm,
+    bottom=2.5cm,
+}
+
+\lstset{
+    language=Matlab,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{lightgray},
+    frame=single,
+    tabsize=2,
+    captionpos=b,
+    breaklines=true
+}
+
+
+\setcounter{tocdepth}{3}
+\setlength{\cftbeforechapskip}{15pt} 
+\setlength{\cftbeforesecskip}{8pt} 
+\setlength{\cftbeforesubsecskip}{5pt} 
+\setlength{\cftbeforesubsubsecskip}{5pt}
+
+\renewcommand\thesection{\arabic{section}.}
+\renewcommand\thesubsection{\thesection\arabic{subsection}.}
+\renewcommand\thesubsubsection{\thesubsection\arabic{subsubsection}.}
+\setcounter{secnumdepth}{3}
+
+
+\begin{document}
+
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \begin{figure}
+        \centering 
+        \includegraphics[width=0.5\textwidth]{"logo.png"}
+    \end{figure}
+    \Huge
+    Zajęcia Projektowe
+    \par
+    \textbf{Oprogramowanie Systemów Pomiarowych}
+    
+    \vspace*{1cm}
+
+    \vspace{0.5cm}
+    \LARGE \textit{Aplikacja autoryzacji dostępu oparta 
+    na biometrycznej weryfikacji tożsamości}
+    
+    \vspace{1.5cm}
+    
+    \textbf{Autorzy:} 
+    \par
+    Jakub Pająk 
+    \par
+    Łukasz Grabarski
+    \par 
+    Krzysztof Grądek
+    \par 
+    Piotr Legień
+    \vspace*{1.5cm}
+    \par AiR Grupa 5TI
+    
+    \vfill
+    
+    \Large 26.03.2024
+    
+\end{titlepage}
+
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{\LARGE Wprowadzenie}
+\subsection{\Large Cel projektu}
+
+\subsection{\Large Założenia wstępne}
+
+\subsection{\Large Harmonogram realizacji projektu}
+
+\section{\LARGE Dokumentacja aplikacji}
+
+\subsection{\Large Zagadnienia ogólne oraz środowiska programistyczne}
+
+\subsection{\Large Omówienie szkieletu aplikacji - Framework LabView JKI}
+
+\subsection{\Large Implementacja procesu logowania w LabView}
+
+\subsection{\Large Implementacja identyfikacji użytkownika}
+
+\section{\LARGE Podsumowanie}
+
+\end{document}
