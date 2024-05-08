@@ -5,8 +5,8 @@ import sys
 
 def find_face_encodings():
 
-    image_1_temp = cv2.imread(r"C:\Users\jakub\Desktop\OSP\New-Approach\Face ID JKI SM plus Python\Data\Jakub\jakub1.jpg")
-    image_2_temp = cv2.imread(r"C:\Users\jakub\Desktop\OSP\New-Approach\Face ID JKI SM plus Python\Data\Jakub\jakub1.jpg")
+    image_1_temp = cv2.imread(r"C:\Users\obiwa\Desktop\Studia\Sem6\OSP\GIT\OSP_Labview_Biometric_py\New-Approach\Face ID JKI SM plus Python\Data\Lukasz\Lukasz.bmp")
+    image_2_temp = cv2.imread(r"C:\Users\obiwa\Desktop\Studia\Sem6\OSP\GIT\OSP_Labview_Biometric_py\New-Approach\Face ID JKI SM plus Python\Data\Log_temp_storage\log_attempt.jpg")
 
     face_enc1 = face_recognition.face_encodings(image_1_temp)
     face_enc2 = face_recognition.face_encodings(image_2_temp)
@@ -35,6 +35,9 @@ def find_face_encodings():
     else:
         print("The images are not same")
         return False
+
+find_face_encodings()
+
 
 #if __name__ == "__main__":
 #    if len(sys.argv) != 3:
