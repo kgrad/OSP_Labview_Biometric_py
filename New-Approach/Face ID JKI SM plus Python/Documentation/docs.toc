@@ -3,9 +3,23 @@
 \contentsline {subsection}{\numberline {1.1.}\Large Cel projektu}{2}{}%
 \contentsline {subsection}{\numberline {1.2.}\Large Założenia wstępne}{2}{}%
 \contentsline {subsection}{\numberline {1.3.}\Large Harmonogram realizacji projektu}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.1.}Okres 1}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.2.}Okres 2}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.3.}Okres 3}{2}{}%
+\contentsline {subsubsection}{\numberline {1.3.4.}Okres 4}{2}{}%
 \contentsline {section}{\numberline {2.}\LARGE Dokumentacja aplikacji}{2}{}%
 \contentsline {subsection}{\numberline {2.1.}\Large Zagadnienia ogólne oraz środowiska programistyczne}{2}{}%
-\contentsline {subsection}{\numberline {2.2.}\Large Omówienie szkieletu aplikacji - Framework LabView JKI}{2}{}%
-\contentsline {subsection}{\numberline {2.3.}\Large Implementacja procesu logowania w LabView}{2}{}%
-\contentsline {subsection}{\numberline {2.4.}\Large Implementacja identyfikacji użytkownika}{2}{}%
-\contentsline {section}{\numberline {3.}\LARGE Podsumowanie}{2}{}%
+\contentsline {subsection}{\numberline {2.2.}\Large Omówienie szkieletu aplikacji - Framework LabView JKI}{3}{}%
+\contentsline {subsection}{\numberline {2.3.}Framework JKI - opis podstawowych stanów}{3}{}%
+\contentsline {subsubsection}{\numberline {2.3.1.}Ogólny wygląd schematu blokowego JKI}{4}{}%
+\contentsline {subsection}{\numberline {2.4.}\Large Implementacja procesu logowania w LabView}{6}{}%
+\contentsline {subsubsection}{\numberline {2.4.1.}\large Stan Face ID: Initialize Grab Image}{6}{}%
+\contentsline {subsubsection}{\numberline {2.4.2.}\large Stan Face ID: Grab Image}{7}{}%
+\contentsline {subsubsection}{\numberline {2.4.3.}\large Stan Face ID: Stop Gram Image}{7}{}%
+\contentsline {subsection}{\numberline {2.5.}\Large Implementacja identyfikacji użytkownika}{7}{}%
+\contentsline {subsubsection}{\numberline {2.5.1.}\large Stan Face ID: Image Processing}{7}{}%
+\contentsline {section}{\numberline {3.}\LARGE Napotkane problemy}{7}{}%
+\contentsline {subsection}{\numberline {3.1.}\Large Implementacja zakładek}{7}{}%
+\contentsline {subsection}{\numberline {3.2.}\Large Wywoływanie skryptów Python z poziomu LabVIEW}{7}{}%
+\contentsline {subsection}{\numberline {3.3.}\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}{7}{}%
+\contentsline {section}{\numberline {4.}\LARGE Podsumowanie}{7}{}%
