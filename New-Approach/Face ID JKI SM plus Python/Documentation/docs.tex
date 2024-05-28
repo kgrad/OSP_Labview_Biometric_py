@@ -240,14 +240,12 @@ Stan "Face ID: Initialize Grab Image" obejmuje procedurę inicjalizacji kamery, 
 
 W przypadku uzyskania wartości False, odpowiedni stan struktury case zostaje wykonany. Na wejście struktury przekazywane są aktualne stany w kolejce oraz linia Timeout. W centralnej części znajdują się bloki finalizujące konfigurację kamery oraz jej przygotowanie do użycia. Dodatkowo, do linii danych przekazywana jest sesja kamery utworzona przez blok "Configure Grab", oraz pusta referencja do nowego obrazu, który zostanie nadpisany w kolejnym kroku. Ponadto, stan "Face ID: Grab Image" jest dodawany do kolejki jako następny do wykonania.
 
-%  ZDJĘCIE
-%
-% \begin{figure}[H]
-%     \centering
-%     includegraphics[width=1.0\textwidth]{}
-%     \caption{Zdjęcie przedstawiające stan "Face ID: Initialize Grab Image" jeśli kamera została znaleziona poprawnie}
-%     \label{fig:face_id-init_false}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-init.png}
+    \caption{Zdjęcie przedstawiające stan "Face ID: Initialize Grab Image" jeśli kamera została znaleziona poprawnie}
+    \label{fig:face_id-init_false}
+\end{figure}
 
 Należy zwrócić uwagę na nadpisanie domyślnego Timeout, mające na celu zabezpieczenie aplikacji przed zatrzymaniem w stanie "Idle", czyli bezczynnością.
 
@@ -256,14 +254,12 @@ Dodatkowo do linii danych zostaje przesłana pusta referencja do sesji kamery or
 
 Warto zauważyć, że w tym przypadku timeout pozostaje niezmieniony względem jego dymyślnej wartości. 
 
-%  ZDJĘCIE
-%
-% \begin{figure}[H]
-%     \centering
-%     includegraphics[width=1.0\textwidth]{}
-%     \caption{Zdjęcie przedstawiające stan "Face ID: Initialize Grab Image" jeśli kamera nie została znaleziona poprawnie}
-%     \label{fig:face_id-init_false}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-init-T.png}
+    \caption{Zdjęcie przedstawiające stan "Face ID: Initialize Grab Image" jeśli kamera nie została znaleziona poprawnie}
+    \label{fig:face_id-init_true}
+\end{figure}
 
 \subsubsection{\large Stan Face ID: Grab Image}
 
@@ -289,16 +285,14 @@ Kolejnym istotnym elementem jest blok Image Display, odpowiada on za wyświetlen
 
 Ostatnim elementem znajdującym się na schemacie jest blok "Bundle By Name", którego działanie jest odwrotne do działania bloku "Unbundle By Name", zatem tworzy on klaster danych poprzez połączenie kilku danych wejściowych.
 
-% ZDJĘCIE
-%
-% \begin{figure}[H]
-%     \centering
-%     includegraphics[width=1.0\textwidth]{}
-%     \caption{Zdjęcie przedstawiające stan "Face ID: Grab Image"}
-%     \label{fig:face_id-init_false}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-grab.png}
+    \caption{Zdjęcie przedstawiające stan "Face ID: Grab Image"}
+    \label{fig:face_id-grab}
+\end{figure}
 
-\subsection*{Take Image Case Struct - SubVi}
+\subsubsection*{Take Image Case Struct - SubVi}
 
 Jak wspomniano wcześniej, powyższy SubVi odpowiada za logikę pobrania zdjęcia. Ze względu na dbałość o czyistość i przejrzystość kodu w przypadku dużej ilości bloków, należy starać się wyodrębnić część bloków do SubVi właśnie. Naturalnie wejścia oraz wyjścia są takie same jak opisane wyżej, dlatego nie będą ponownie wyszczególniane. 
 
@@ -307,14 +301,19 @@ Jeśli stan przycisku jest równy False, obraz jest pobierany przez blok "Get Im
 
 W przypadku naciśnięcia przycisku logowania, zostaje wykonany stan True. Proces pobierania obrazu oraz przekazywania jego referencji na wyjście jest niezmieniony. Różnica pojawia się natomiast w sposobie przekazywania kolejnego stanu do kolejki. Poczynając od środka, można zauważyć blok "Elapsed Time", jest on odpowiedzialny za licznik, który określa jak długo ma trwać akwizycja danych. Jeśli licznik jest w trakcie odliczania, na jego wyjściu pojawia się flaga "False" i trafia na blok "Select", który jest odpowiedzialny za wybór odpowiedniej wartości na podstawie warunku. Można porównać ten blok do prostej instrukcji warunkowej if. Zatem jeśli licznik jest w trakcie działania, do kolejki jest przekazywany stan "Face ID: Grab Image" oraz grupa stanów "Event Structure". To oznacza, że ponownie tak długo jak trwa timer, aplikacja będzie zapętlona na stanie "Face ID: Grab Image". W momencie, gdy licznik zwróci wartość True - odliczy zadany czas, do kolejki zostaje przekazany stan "Face ID: Stop Grab Image". 
 
-% ZDJĘCIE
-%
-% \begin{figure}[H]
-%     \centering
-%     includegraphics[width=1.0\textwidth]{}
-%     \caption{Zdjęcie przedstawiające SubVI Take Image Case Struct}
-%     \label{fig:face_id-init_false}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-case.png}
+    \caption{Zdjęcie przedstawiające SubVI Take Image Case Struct w przypadku stanu wysokiego odebranego z przycisku}
+    \label{fig:face_id-grab-case}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-case-2.png}
+    \caption{Zdjęcie przedstawiające SubVI Take Image Case Struct w przypadku braku sygnału z przycisku}
+    \label{fig:face_id-grab-case-2}
+\end{figure}
 
 \subsubsection{\large Stan Face ID: Stop Grab Image}
 
@@ -332,14 +331,13 @@ Ponieważ niebezpieczeństwo zablokowania aplikacji podczas używania kamery prz
 
 Dodatkowo, następuje przejście z zakładki "Page 1" do zakładki "Page 2" za pomocą bloku "Tab Control", do którego na wejście przekazywana jest odpowiednia wartość typu wyliczeniowego zawierającego istniejące zakładki.
 
-% ZDJĘCIE
-%
-% \begin{figure}[H]
-%     \centering
-%     includegraphics[width=1.0\textwidth]{}
-%     \caption{Zdjęcie przedstawiające stan Face ID: Stop Grab Image}
-%     \label{fig:face_id-init_false}
-% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-stop-grab.png}
+    \caption{Zdjęcie przedstawiające stan Face ID: Stop Grab Image}
+    \label{fig:face_id-stop-grab}
+\end{figure}
 
 \subsubsection{\large Stan Face ID: Image Processing}
 
@@ -351,13 +349,20 @@ Po zakończeniu działania sesja Python zostaje zamknięta, a wartość zwrócon
 
 W przypadku, gdy logowanie nie zakończyło się sukcesem, wyświetlana jest informacja o statusie logowania, a do kolejki zostaje przekazany stan "Face ID: Initialize Grab Image", co powoduje, że aplikacja wraca do stanu początkowego. Zakładka zostaje przełączona na ekran początkowy.
  
-%
-% \begin{figure}[H]
-%     \centering
-%     includegraphics[width=1.0\textwidth]{}
-%     \caption{Zdjęcie przedstawiające stan Face ID: Image Processing}
-%     \label{fig:face_id-init_false}
-% \end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-image-process.png}
+    \caption{Zdjęcie przedstawiające stan Face ID: Image Processing jeśli logowanie zakończyło się sukcesem}
+    \label{fig:face_id-process}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/face-id/face-id-image-process-2.png}
+    \caption{Zdjęcie przedstawiające stan Face ID: Image Processing jeśli logowanie zakończyło się niepowodzeniem}
+    \label{fig:face_id-process-2}
+\end{figure}
 
 \subsection{\Large Implementacja identyfikacji użytkownika}
 
@@ -377,23 +382,124 @@ Jeżeli żadne z kodowań twarzy z zarejestrowanych obrazów nie będzie zgodne 
 
 Funkcja \texttt{find\_face\_encodings} jest kluczowym elementem systemu rozpoznawania twarzy, odpowiadającym za porównanie twarzy użytkownika z bazą zarejestrowanych obrazów. Wykorzystując biblioteki \texttt{cv2} oraz \texttt{face\_recognition}, funkcja ta skutecznie identyfikuje użytkownika, zapewniając odpowiedni poziom dokładności i niezawodności.
 
+% \begin{figure}
+%     \centering
+%     \includegraphics*[keyvals]{imagefile}
+%     \caption{Kod źródłowy realizujący weryfikację tożsamości użytkownika}
+%     \label{fig:python-code}
+% \end{figure}
+
 \subsection{\Large Implementacja procesu dodawania użytkownika}
 
 \subsubsection{\large Stan Add User: Input Image Init}
 
-%% Opis procesu dodawania użytkownika zrealizować tak samo jak proces logowania,
-%% Być może nieco mniej szczegółowo
+Pierwszym elementem dodania nowego użytkownika do bazy danych znanych użytkowników jest inicjalizacja kamery. Stan ten jest bliźniaczo podobny do stanu Face ID: Grab Image Init, dlatego też nie będzie ponownie szczegółowo opisywany. 
+
+\begin{figure}
+    \centering
+    \includegraphics*[width=1.0\textwidth]{src/add-user/add-user-init.png}
+    \caption{Obraz przedstawiający schemats blokowy realizujący inicjalizację kamery}
+    \label{fig:add-user-init}
+\end{figure}
+
+\subsubsection{\large Stan Add User: Grab Input Image}
+
+Logika oraz zasada działania stanu "Add User: Grab Image" są niemal identyczne jak w przypadku stanu "Face ID: Grab Image". Kluczową różnicą jest wprowadzenie nowego elementu do linii danych \textit{Data Wire}, nazwanego \textit{"Img Path"}. Jest to parametr typu \texttt{String}, który określa nazwę pliku (tu: zdjęcia) uzyskanego podczas procesu dodawania nowego użytkownika.
+
+Nazwa pliku jest generowana poprzez konkatenację dwóch zmiennych typu \texttt{String} oraz jednej stałej typu \texttt{String}. Zmienne te pochodzą z panelu użytkownika, gdzie przed rozpoczęciem akwizycji obrazu użytkownik wprowadza swoje imię i nazwisko. Te dwa parametry tworzą główną część nazwy pliku. Ostatnia składowa jest stałą określającą rozszerzenie pliku. Ze względu na relatywnie niewielki rozmiar, użyto rozszerzenia \textit{.jpg}.
+
+Konkatenacja trzech ciągów znaków jest realizowana za pomocą bloku \textit{Concatenate Strings}, dostępnego w standardzie LabVIEW.
+
+Różnica występuje również w sposobie przekazania kolejnego stanu do kolejki. Z uwagi na pierwotne napisanie pakietu \textit{SubVI} dla stanu \textit{"Face ID: Grab Image"}, blok na wyjściu przekazuje kolejny stan kategorii \textit{Face ID}. Aby uniknąć powielania kodu, zastosowano metodę porównania oraz selektor, który na podstawie wyniku porównania dodaje do kolejki odpowiednie stany.
+
+Jeśli blok zwróci stan \textit{"Face ID: Stop Grab Image"}, podczas operacji porównania zostanie zwrócona wartość \texttt{True}, co wpłynie na selektor, który doda do kolejki stan \textit{"Add User: Stop Grab Image"}.
+
+% \begin{figure}
+%     \centering
+%     \includegraphics*[keyvals]{imagefile}
+%     \caption{Obraz przedstawiający stan Add User: Grab Input Image}
+%     \label{fig:add-user-grab}
+% \end{figure}
+
+\subsubsection*{\large Stan Add User: Stop Grab Image}
+
+
+Stan ten jest zbliżony do stanu \textit{Face ID: Stop Grab Image}, z tą różnicą, że do kolejki przekazywany jest inny stan, mianowicie \textit{Face ID: Control Panel}, zamiast stanu \textit{Face ID: Image Processing}. Jest to spowodowane koniecznością uniknięcia weryfikacji tożsamości podczas dodawania nowego użytkownika, co byłoby nielogiczne.
+
+Podczas tego stanu, proces zapisu pliku został zmodyfikowany w zakresie parametrów ścieżki do pliku. W przypadku logowania, bieżące pliki są zapisywane w folderze \textit{Log\_temp\_storage}. Natomiast pliki pobrane podczas dodawania nowego użytkownika są zapisywane w folderze \textit{Registered\_Users} pod nazwą pobraną z linii danych \textit{Data Wire}.
+
+Warto podkreślić użycie bloku \textit{String to Path}, który jest dostarczany w standardzie LabVIEW. Blok ten przekształca typ \textit{String} na typ \textit{Path}, co zapewnia zgodność typu zmiennej przekazywanej na wejście bloku \textit{Path Builder} z oczekiwanym typem.
+
+
+% \begin{figure}
+%     \centering
+%     \includegraphics*[keyvals]{imagefile}
+%     \caption{Obraz przedstawiający stan Add User: Stop Grab Image}
+% \end{figure}
 
 \subsection{\Large Implementacja połączenia aplikacji z bazą danych}
 
-%% Opis podobnie jak wcześniej jednak szczegółowo ze względu na nieco większą złożoność
+% --------------------------------------------------------
+% Autor: Łukasz Grabarski, Jakub Pająk
+%
+% TODO: Opisać proces działającego połączenia z bazą danych SQL Server
+%
+% Status: 
+% --------------------------------------------------------
 
 \section{\LARGE Napotkane problemy}
 \subsection{\Large Implementacja zakładek}
 
+Ze względu na charakter aplikacji wymagane jest użycie zakładek, implementacja czego nie była oczywista w środowisku LabView. Kluczowym elementem używania zakładek lub też tzw. Tabs, jest użycie bloku \textit{Tab Control}. Jednakże, ze względu na ograniczoną ilość dostępnych materiałów na ten temat w internecie wdrożenie tego rozwiązania okazało się dużym wyzwaniem. 
+
+Pierwsza wersja aplikacji zawierała wszystkie zakładki w jednym stanie - \textit{UI: Initialize}. Jak nietrudno się domyślić, rozwiązanie to było z zasady błędne, ponieważ nie wykorzystywało korzyści jakie daje framework JKI. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/first-att.png}
+    \caption{Obraz przedstawiający pierwszą próbę implementacji struktury Tab Control}
+    \label{fig:first-att}
+\end{figure}
+
+Następna próba rozwiązania również wykorzystywała strukturę \textit{Tab Control}, jednak tym razem implementacja była porawna, a więc wszystkie funkcjonalności podszczególnych zakładek zostały wyodrębnione do odpowiendnich stanów. 
+
+Implementacja takiego rozwiązania jest możliwa poprzez dodanie globalnego bloku \textit{Tab Control}, znajdującego się na większości załączonych orbazów w prawym górnym rogu. Znaczenie słowa \textit{"globalnego"} oznacza w tym przypadku umieszczenie go poza strukturą \texttt{While}, rdzenia framework'a JKI.
+
+Odpowiada on za obsługę oraz wyświetlenie całej struktury na interfejsie użytkownika. Przełączanie pomiędzy kolejnymi zakładkami jest realizowane również poprzez blok \textit{Tab Control} oraz dodanie do niego typu wyliczeniowego zawierającego nazwę strony, którą należy wyświeltić. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{src/tab-control.png}
+    \caption{Obraz przedstawiający użycie bloku globalnego Tab Control}
+    \label{fig:tab-control}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{src/tab-control-page.png}
+    \caption{Obraz przedstawiający implementację przełączania między zakładkami}
+    \label{fig:tab-control-page}
+\end{figure}
+
 \subsection{\Large Wywoływanie skryptów Python z poziomu LabVIEW}
 
+% --------------------------------------------------------
+% Autor: Krzysztof Grądek, Piotr Legień
+%
+% TODO: Opisać problemy napotkane podczas prób wywołania skryptów LabView z poziomu LabView
+%
+% Status: 
+% --------------------------------------------------------
+
 \subsection{\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}
+
+% --------------------------------------------------------
+% Autor: Łukasz Grabarski
+%
+% TODO: Opisać problemy napotkane podczas prób połączenia LabView z bazą danych SQL Server
+%
+% Status: 
+% --------------------------------------------------------
 
 \section{\LARGE Podsumowanie}
 

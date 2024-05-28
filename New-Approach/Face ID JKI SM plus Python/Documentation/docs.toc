@@ -14,15 +14,16 @@
 \contentsline {subsubsection}{\numberline {2.3.1.}\large Ogólny wygląd schematu blokowego JKI}{4}{}%
 \contentsline {subsection}{\numberline {2.4.}\Large Implementacja procesu logowania w LabView}{6}{}%
 \contentsline {subsubsection}{\numberline {2.4.1.}\large Stan Face ID: Initialize Grab Image}{6}{}%
-\contentsline {subsubsection}{\numberline {2.4.2.}\large Stan Face ID: Grab Image}{7}{}%
-\contentsline {subsubsection}{\numberline {2.4.3.}\large Stan Face ID: Stop Grab Image}{8}{}%
-\contentsline {subsubsection}{\numberline {2.4.4.}\large Stan Face ID: Image Processing}{8}{}%
-\contentsline {subsection}{\numberline {2.5.}\Large Implementacja identyfikacji użytkownika}{9}{}%
-\contentsline {subsection}{\numberline {2.6.}\Large Implementacja procesu dodawania użytkownika}{9}{}%
-\contentsline {subsubsection}{\numberline {2.6.1.}\large Stan Add User: Input Image Init}{9}{}%
-\contentsline {subsection}{\numberline {2.7.}\Large Implementacja połączenia aplikacji z bazą danych}{9}{}%
-\contentsline {section}{\numberline {3.}\LARGE Napotkane problemy}{9}{}%
-\contentsline {subsection}{\numberline {3.1.}\Large Implementacja zakładek}{9}{}%
-\contentsline {subsection}{\numberline {3.2.}\Large Wywoływanie skryptów Python z poziomu LabVIEW}{9}{}%
-\contentsline {subsection}{\numberline {3.3.}\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}{9}{}%
-\contentsline {section}{\numberline {4.}\LARGE Podsumowanie}{9}{}%
+\contentsline {subsubsection}{\numberline {2.4.2.}\large Stan Face ID: Grab Image}{8}{}%
+\contentsline {subsubsection}{\numberline {2.4.3.}\large Stan Face ID: Stop Grab Image}{10}{}%
+\contentsline {subsubsection}{\numberline {2.4.4.}\large Stan Face ID: Image Processing}{11}{}%
+\contentsline {subsection}{\numberline {2.5.}\Large Implementacja identyfikacji użytkownika}{12}{}%
+\contentsline {subsection}{\numberline {2.6.}\Large Implementacja procesu dodawania użytkownika}{13}{}%
+\contentsline {subsubsection}{\numberline {2.6.1.}\large Stan Add User: Input Image Init}{13}{}%
+\contentsline {subsubsection}{\numberline {2.6.2.}\large Stan Add User: Grab Input Image}{14}{}%
+\contentsline {subsection}{\numberline {2.7.}\Large Implementacja połączenia aplikacji z bazą danych}{14}{}%
+\contentsline {section}{\numberline {3.}\LARGE Napotkane problemy}{14}{}%
+\contentsline {subsection}{\numberline {3.1.}\Large Implementacja zakładek}{14}{}%
+\contentsline {subsection}{\numberline {3.2.}\Large Wywoływanie skryptów Python z poziomu LabVIEW}{15}{}%
+\contentsline {subsection}{\numberline {3.3.}\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}{15}{}%
+\contentsline {section}{\numberline {4.}\LARGE Podsumowanie}{15}{}%

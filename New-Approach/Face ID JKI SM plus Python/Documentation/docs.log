@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.4)  22 MAY 2024 15:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.5.4)  28 MAY 2024 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -310,28 +310,97 @@ File: src/UI-init.png Graphic file (type png)
 <use src/UI-init.png>
 Package pdftex.def Info: src/UI-init.png  used on input line 224.
 (pdftex.def)             Requested size: 455.24411pt x 276.02751pt.
- [6 <./src/UI-init.png>] [7]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 350.
+ [6 <./src/UI-init.png>]
+<src/face-id/face-id-init.png, id=47, 1963.335pt x 1175.14032pt>
+File: src/face-id/face-id-init.png Graphic file (type png)
+<use src/face-id/face-id-init.png>
+Package pdftex.def Info: src/face-id/face-id-init.png  used on input line 245.
+(pdftex.def)             Requested size: 455.24411pt x 272.48212pt.
+<src/face-id/face-id-init-T.png, id=48, 1960.32375pt x 1180.41pt>
+File: src/face-id/face-id-init-T.png Graphic file (type png)
+<use src/face-id/face-id-init-T.png>
+Package pdftex.def Info: src/face-id/face-id-init-T.png  used on input line 259.
+(pdftex.def)             Requested size: 455.24411pt x 274.11829pt.
+ [7 <./src/face-id/face-id-init.png>]
+<src/face-id/face-id-grab.png, id=53, 1952.79562pt x 1175.89313pt>
+File: src/face-id/face-id-grab.png Graphic file (type png)
+<use src/face-id/face-id-grab.png>
+Package pdftex.def Info: src/face-id/face-id-grab.png  used on input line 290.
+(pdftex.def)             Requested size: 455.24411pt x 274.12798pt.
+ [8 <./src/face-id/face-id-init-T.png>]
+<src/face-id/face-id-case.png, id=58, 2085.29062pt x 765.6103pt>
+File: src/face-id/face-id-case.png Graphic file (type png)
+<use src/face-id/face-id-case.png>
+Package pdftex.def Info: src/face-id/face-id-case.png  used on input line 306.
+(pdftex.def)             Requested size: 455.24411pt x 167.13805pt.
+ [9 <./src/face-id/face-id-grab.png>]
+<src/face-id/face-id-case-2.png, id=63, 2113.8975pt x 820.56563pt>
+File: src/face-id/face-id-case-2.png Graphic file (type png)
+<use src/face-id/face-id-case-2.png>
+Package pdftex.def Info: src/face-id/face-id-case-2.png  used on input line 313.
+(pdftex.def)             Requested size: 455.24411pt x 176.70615pt.
+ [10 <./src/face-id/face-id-case.png> <./src/face-id/face-id-case-2.png>]
+<src/face-id/face-id-stop-grab.png, id=69, 1957.3125pt x 1181.91562pt>
+File: src/face-id/face-id-stop-grab.png Graphic file (type png)
+<use src/face-id/face-id-stop-grab.png>
+Package pdftex.def Info: src/face-id/face-id-stop-grab.png  used on input line 337.
+(pdftex.def)             Requested size: 455.24411pt x 274.90074pt.
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 348.
  (C:\Users\jakub\AppData\Local\Programs\MiKTeX\tex/latex/base\t1cmtt.fd
 File: t1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
-) [8] [9] (docs.aux)
+)
+<src/face-id/face-id-image-process.png, id=70, 1948.27875pt x 1175.89313pt>
+File: src/face-id/face-id-image-process.png Graphic file (type png)
+<use src/face-id/face-id-image-process.png>
+Package pdftex.def Info: src/face-id/face-id-image-process.png  used on input line 355.
+(pdftex.def)             Requested size: 455.24411pt x 274.75597pt.
+ [11 <./src/face-id/face-id-stop-grab.png>]
+<src/face-id/face-id-image-process-2.png, id=76, 1959.57094pt x 1172.12906pt>
+File: src/face-id/face-id-image-process-2.png Graphic file (type png)
+<use src/face-id/face-id-image-process-2.png>
+Package pdftex.def Info: src/face-id/face-id-image-process-2.png  used on input line 362.
+(pdftex.def)             Requested size: 455.24411pt x 272.30257pt.
+ [12 <./src/face-id/face-id-image-process.png> <./src/face-id/face-id-image-process-2.png>]
+<src/add-user/add-user-init.png, id=83, 1968.60469pt x 1166.10657pt>
+File: src/add-user/add-user-init.png Graphic file (type png)
+<use src/add-user/add-user-init.png>
+Package pdftex.def Info: src/add-user/add-user-init.png  used on input line 400.
+(pdftex.def)             Requested size: 455.24411pt x 269.65791pt.
+ [13 <./src/add-user/add-user-init.png>]
+<src/first-att.png, id=90, 2098.08844pt x 679.03688pt>
+File: src/first-att.png Graphic file (type png)
+<use src/first-att.png>
+Package pdftex.def Info: src/first-att.png  used on input line 459.
+(pdftex.def)             Requested size: 455.24411pt x 147.33704pt.
+ [14]
+<src/tab-control.png, id=95, 743.77875pt x 377.91188pt>
+File: src/tab-control.png Graphic file (type png)
+<use src/tab-control.png>
+Package pdftex.def Info: src/tab-control.png  used on input line 472.
+(pdftex.def)             Requested size: 227.62206pt x 115.65219pt.
+<src/tab-control-page.png, id=96, 1245.15187pt x 517.935pt>
+File: src/tab-control-page.png Graphic file (type png)
+<use src/tab-control-page.png>
+Package pdftex.def Info: src/tab-control-page.png  used on input line 479.
+(pdftex.def)             Requested size: 227.62206pt x 94.67842pt.
+ [15 <./src/first-att.png> <./src/tab-control.png> <./src/tab-control-page.png>] (docs.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-03-14>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6909 strings out of 474424
- 115140 string characters out of 5741740
- 1939496 words of memory out of 5000000
- 29207 multiletter control sequences out of 15000+600000
- 567117 words of font info for 49 fonts, out of 8000000 for 9000
+ 7011 strings out of 474424
+ 118457 string characters out of 5741740
+ 1937496 words of memory out of 5000000
+ 29308 multiletter control sequences out of 15000+600000
+ 567803 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,6n,65p,1167b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2488.pk>
-Output written on docs.pdf (10 pages, 438712 bytes).
+ <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\jakub\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2488.pk>
+Output written on docs.pdf (16 pages, 1285249 bytes).
 PDF statistics:
- 552 PDF objects out of 1000 (max. 8388607)
+ 642 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 92 words of extra memory for PDF output out of 10000 (max. 10000000)
 
