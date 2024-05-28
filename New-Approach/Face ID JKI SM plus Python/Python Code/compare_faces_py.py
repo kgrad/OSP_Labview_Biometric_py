@@ -8,11 +8,13 @@ def find_face_encodings():
     registered_users_folder = r"C:\Users\obiwa\Desktop\Studia\Sem6\OSP\GIT\OSP_Labview_Biometric_py\New-Approach\Face ID JKI SM plus Python\Data\Registered_Users"
     image_2_temp = cv2.imread(r"C:\Users\obiwa\Desktop\Studia\Sem6\OSP\GIT\OSP_Labview_Biometric_py\New-Approach\Face ID JKI SM plus Python\Data\Log_temp_storage\log.jpg")
 
+    
+
     face_enc2 = face_recognition.face_encodings(image_2_temp)
 
     if not face_enc2:
         print("Nie udało się wykryć twarzy w obrazie logowania.")
-        return False
+        return "False"
 
     img_2_detected = face_enc2[0]
 
@@ -39,9 +41,9 @@ def find_face_encodings():
                 accuracy = 100 - round(distance)
                 print(f"The images are same: {filename}")
                 print(f"Accuracy Level: {accuracy}%")
-                return True
+                return filename
 
     print("The images are not same")
-    return False
+    return "False"
 
 find_face_encodings()
