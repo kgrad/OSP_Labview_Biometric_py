@@ -444,8 +444,144 @@ Warto podkreślić użycie bloku \textit{String to Path}, który jest dostarczan
 %
 % TODO: Opisać proces działającego połączenia z bazą danych SQL Server
 %
-% Status: 
+% Status: Łukasz 75% - zostało opisanie SubVi
 % --------------------------------------------------------
+W celu poprawnego funkcjonowania aplikcji, niezbędnym było utworzenie tabeli w bazie danych. Do tego celu został wykorzystany program 
+Microsoft SQL Server Management Studio. Tabela ma za zadanie przechowywać takie dane użytkownika jak \textit{Imię, Nazwisko, Input, Nazwa pliku}.
+Input jest wartością zdolną do modyfikacji w aplikacji, ponieważ owa kolumna ma służyć do prostej obsługi konta indywidualnie dla każdego użytkownika.
+Kolumna Nazwa pliku przechowuje ścieżkę względną do obrazu referencyjnego, który jest wykorzystywany przez skrypt w Pythonie do zidentyfikowania danej
+osoby próbującej się zalogować.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Microsoft SQL.png}
+    \caption{Obraz przedstawiający tablicę wynikową bazy danych utworzonej w Microsoft SQL Server Management Studio. Wiersze 5-6 zostały dodane za pomocą aplikacji LabView.}
+    \label{fig:first-att}
+\end{figure}
+
+
+\subsubsection{\large Generowanie linku do bazy danych}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage1.png}
+    \caption{Rozwinięcie listy Tools i wybranie pozycji Create Data Link}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage2.png}
+    \caption{Wybór odpowiednich danych}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage3.png}
+    \caption{Wybór nazwy serwera}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage4.png}
+    \caption{Wporwadzenie informacji o logowaniu na serwer}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage5.png}
+    \caption{Wybór odpowiedniej bazy danych z serwera}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage6.png}
+    \caption{Przetestowanie utworzonego połączenia}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Stage7.png}
+    \caption{Wprowadzenie ścieżki względnej do utworzonego linku .udl}
+    \label{fig:first-att}
+\end{figure}
+
+
+
+\newpage
+\subsubsection{\large Wykorzystanie SubVi DatabaseRead}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_read.png}
+    \caption{Obraz przedstawiający implemenctację SubVi w maszynie stanów}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_read_subvi_frontpanel.png}
+    \caption{Obraz przedstawiający Front Panel }
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_read_subvi.png}
+    \caption{Obraz przedstawiający Block Diagram }
+    \label{fig:first-att}
+\end{figure}
+
+\subsubsection{\large Wykorzystanie SubVi DatabaseWrite}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_write.png}
+    \caption{Obraz przedstawiający implemenctację SubVi w maszynie stanów}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_write_subvi_frontpanel.png}
+    \caption{Obraz przedstawiający Front Panel}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_write_subvi.png}
+    \caption{Obraz przedstawiający Block Diagram}
+    \label{fig:first-att}
+\end{figure}
+
+\subsubsection{\large Wykorzystanie SubVi DatabaseUpdate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_update.png}
+    \caption{Obraz przedstawiający implemenctację SubVi w maszynie stanów}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_update_subvi_frontpanel.png}
+    \caption{Obraz przedstawiający Front Panel}
+    \label{fig:first-att}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Database_update_subvi.png}
+    \caption{Obraz przedstawiający Block Diagram}
+    \label{fig:first-att}
+\end{figure}
 
 \section{\LARGE Napotkane problemy}
 \subsection{\Large Implementacja zakładek}

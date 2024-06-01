@@ -22,6 +22,7 @@
 		</Item>
 		<Item Name="SubVIs" Type="Folder">
 			<Item Name="DatabaseRead SubVI.vi" Type="VI" URL="../SubVIs/DatabaseRead SubVI.vi"/>
+			<Item Name="DatabaseUpdate.vi" Type="VI" URL="../SubVIs/DatabaseUpdate.vi"/>
 			<Item Name="DatabaseWrite SubVI.vi" Type="VI" URL="../SubVIs/DatabaseWrite SubVI.vi"/>
 			<Item Name="List Available Cameras.vi" Type="VI" URL="../SubVIs/List Available Cameras.vi"/>
 			<Item Name="Python.vi" Type="VI" URL="../SubVIs/Python.vi"/>
