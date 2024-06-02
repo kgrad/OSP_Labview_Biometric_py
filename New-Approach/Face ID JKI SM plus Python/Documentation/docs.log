@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.5.26)  2 JUN 2024 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.5.26)  2 JUN 2024 17:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -194,6 +194,9 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count280
 \l__pdf_internal_box=\box55
 ) (docs.aux
+
+LaTeX Warning: Label `fig:first-att' multiply defined.
+
 
 LaTeX Warning: Label `fig:first-att' multiply defined.
 
@@ -532,43 +535,48 @@ File: src/Database/Database_update_subvi.png Graphic file (type png)
 Package pdftex.def Info: src/Database/Database_update_subvi.png  used on input line 633.
 (pdftex.def)             Requested size: 455.24411pt x 207.84337pt.
  [24 <./src/Database/Database_update_subvi_frontpanel.png> <./src/Database/Database_update_subvi.png>]
+File: src/Database/Microsoft SQL.png Graphic file (type png)
+<use src/Database/Microsoft SQL.png>
+Package pdftex.def Info: src/Database/Microsoft SQL.png  used on input line 649.
+(pdftex.def)             Requested size: 273.14923pt x 127.21385pt.
 <src/first-att.png, id=162, 2098.08844pt x 679.03688pt>
 File: src/first-att.png Graphic file (type png)
 <use src/first-att.png>
-Package pdftex.def Info: src/first-att.png  used on input line 647.
+Package pdftex.def Info: src/first-att.png  used on input line 670.
 (pdftex.def)             Requested size: 455.24411pt x 147.33704pt.
-<src/tab-control.png, id=163, 743.77875pt x 377.91188pt>
+ [25 <./src/first-att.png>]
+<src/tab-control.png, id=167, 743.77875pt x 377.91188pt>
 File: src/tab-control.png Graphic file (type png)
 <use src/tab-control.png>
-Package pdftex.def Info: src/tab-control.png  used on input line 660.
+Package pdftex.def Info: src/tab-control.png  used on input line 683.
 (pdftex.def)             Requested size: 227.62206pt x 115.65219pt.
-<src/tab-control-page.png, id=164, 1245.15187pt x 517.935pt>
+<src/tab-control-page.png, id=168, 1245.15187pt x 517.935pt>
 File: src/tab-control-page.png Graphic file (type png)
 <use src/tab-control-page.png>
-Package pdftex.def Info: src/tab-control-page.png  used on input line 667.
+Package pdftex.def Info: src/tab-control-page.png  used on input line 690.
 (pdftex.def)             Requested size: 227.62206pt x 94.67842pt.
- [25 <./src/first-att.png> <./src/tab-control.png> <./src/tab-control-page.png>]
-<src/Database/Fragment_DatabaseRead.png, id=171, 647.41875pt x 179.92218pt>
+<src/Database/Fragment_DatabaseRead.png, id=169, 647.41875pt x 179.92218pt>
 File: src/Database/Fragment_DatabaseRead.png Graphic file (type png)
 <use src/Database/Fragment_DatabaseRead.png>
-Package pdftex.def Info: src/Database/Fragment_DatabaseRead.png  used on input line 705.
+Package pdftex.def Info: src/Database/Fragment_DatabaseRead.png  used on input line 728.
 (pdftex.def)             Requested size: 273.14923pt x 75.90997pt.
-<src/Database/Write_spam.png, id=172, 445.665pt x 386.19281pt>
+ [26 <./src/tab-control.png> <./src/tab-control-page.png>]
+<src/Database/Write_spam.png, id=175, 445.665pt x 386.19281pt>
 File: src/Database/Write_spam.png Graphic file (type png)
 <use src/Database/Write_spam.png>
-Package pdftex.def Info: src/Database/Write_spam.png  used on input line 720.
+Package pdftex.def Info: src/Database/Write_spam.png  used on input line 743.
 (pdftex.def)             Requested size: 182.09486pt x 157.79204pt.
 File: src/Database/Database_write_subvi.png Graphic file (type png)
 <use src/Database/Database_write_subvi.png>
-Package pdftex.def Info: src/Database/Database_write_subvi.png  used on input line 727.
+Package pdftex.def Info: src/Database/Database_write_subvi.png  used on input line 750.
 (pdftex.def)             Requested size: 409.71692pt x 185.83806pt.
- [26 <./src/Database/Fragment_DatabaseRead.png> <./src/Database/Write_spam.png>]
-<src/Database/Update_iteration.png, id=178, 995.21812pt x 389.20406pt>
+ [27 <./src/Database/Fragment_DatabaseRead.png> <./src/Database/Write_spam.png>]
+<src/Database/Update_iteration.png, id=181, 995.21812pt x 389.20406pt>
 File: src/Database/Update_iteration.png Graphic file (type png)
 <use src/Database/Update_iteration.png>
-Package pdftex.def Info: src/Database/Update_iteration.png  used on input line 742.
+Package pdftex.def Info: src/Database/Update_iteration.png  used on input line 765.
 (pdftex.def)             Requested size: 455.24411pt x 178.03833pt.
- [27 <./src/Database/Update_iteration.png>] (docs.aux)
+ [28 <./src/Database/Update_iteration.png>] (docs.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -587,9 +595,9 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,6n,65p,1208b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2488.pk>
-Output written on docs.pdf (28 pages, 1991839 bytes).
+Output written on docs.pdf (29 pages, 1994595 bytes).
 PDF statistics:
- 746 PDF objects out of 1000 (max. 8388607)
+ 751 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

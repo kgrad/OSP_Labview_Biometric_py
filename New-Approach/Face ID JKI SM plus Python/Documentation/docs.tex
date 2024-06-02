@@ -635,6 +635,29 @@ Dodatkowo cały proces przed i po wyświetlany jest podwójne użycie funkcji fo
     \label{fig:first-att}
 \end{figure}
 
+\newpage
+\subsection{\Large Instrukcja korzystania z aplikacji}
+
+W aplikacji zostały umieszczone podpowiedzi, dotyczące m.in. ustawienia się do kamery oraz informacje do czego służą przyciski. Jednakże wartym dodania jest instrukcji
+jak powinno się korzystać za aplikacji aby po przy pierwszym uruchumieniu działała poprawnie. 
+
+Przed uruchomieniem aplikacji głównej należy uruchomić SubVi oznaczoną nazwą DatabaseRead SubVi. Aplikacja powinna wtedy zaczerpnąć informacje z bazy, jeśli tego nie zrobiła
+kluczowe będzie wygenerowanie linku połączenia do bazy zgodnie z podrozdziałem 2.7.1. Kluczowe jest aby tabela bazy danych posiadała kolumny Imie, Nazwisko, Input oraz Nazwa Pliku.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Microsoft SQL.png}
+    \caption{Obraz przedstawiający przykładową tabelę}
+    \label{fig:first-att}
+\end{figure}
+
+Gdy elementy z bazy danych zostaną zaczerpnięte aplikacja powinna działać sprawnie jednakże, jeśli korzysta z niej osoba, która nie jest zarejestrowana, nie uzyska ona bowiem dostępu.
+W tym przypadku konieczne będzie dodanie wyraźnego zdjęcia przedstawiającego twarz użytkownika do folderu aplikacji Data -> Registered Users. Po tym zabiegu aplikacja powinna wpuścić nowego użytkownika
+i będzie możliwe dodanie go do bazy danych poprzez wciśnięcie przycisku Add User i nadaniu Imienia i Nazwiska. Aplikacja wykona wtedy nowe zdjęcie z nazwą pliku odpowiadającemu podanemu Imieniu oraz Nazwisku.
+Po tym zabiegu będzie można usunąć stare (tymczasowe) zdjęcie z folderu Registered Users
+
+
+
 \section{\LARGE Napotkane problemy}
 \subsection{\Large Implementacja zakładek}
 
@@ -688,7 +711,7 @@ Odpowiada on za obsługę oraz wyświetlenie całej struktury na interfejsie uż
 %
 % TODO: Opisać problemy napotkane podczas prób połączenia LabView z bazą danych SQL Server
 %
-% Status: 
+% Status: 100%
 % --------------------------------------------------------
 
 Głównym problemem przy połączeniu z bazą danych była manipulacja oraz porównywanie komórek w tablicy z wartościami dostarczanymi przez aplikację LabView.
