@@ -444,7 +444,7 @@ Warto podkreślić użycie bloku \textit{String to Path}, który jest dostarczan
 %
 % TODO: Opisać proces działającego połączenia z bazą danych SQL Server
 %
-% Status: Łukasz 75% - zostało opisanie SubVi
+% Status: Łukasz 100%
 % --------------------------------------------------------
 W celu poprawnego funkcjonowania aplikcji, niezbędnym było utworzenie tabeli w bazie danych. Do tego celu został wykorzystany program 
 Microsoft SQL Server Management Studio. Tabela ma za zadanie przechowywać takie dane użytkownika jak \textit{Imię, Nazwisko, Input, Nazwa pliku}.
@@ -516,12 +516,31 @@ osoby próbującej się zalogować.
 \newpage
 \subsubsection{\large Wykorzystanie SubVi DatabaseRead}
 
+W celu poprawnego wyświetlenia informacji zwrotnej, kto aktualnie został zalogowany, konieczne było przygotowanie odpowodniej
+SubVi. Jej zadaniem jest przechwycenie informacji zwrotnej uzyskanej przez skrypt w pythonie i porównanie jej z dostępnymi osobami w bazie. 
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{src/Database/Database_read.png}
+    \includegraphics[width=0.7\textwidth]{src/Logged.png}
+    \caption{Obraz przedstawiający główny widok aplikacji po zalogowaniu}
+    \label{fig:first-att}
+\end{figure}
+
+Skrypt w pythonie został tak przekształcony, że w zależności od wyniku jeśli nie wykryto żadnej osoby to zwraca wartość zmiennej string "False".
+Natomiast jeśli wykrył daną osobę, kóra znajduje się w pliku z obrazami referencyjnymi to zwraca nazwę obrazu wraz z rozszerzeniem, którego wynik był najbardziej zgodny.
+Kolejno ścieżka do pliku przesyłana jest do bloku porównującego jak i przygotowanej SubVi.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_read.png}
     \caption{Obraz przedstawiający implemenctację SubVi w maszynie stanów}
     \label{fig:first-att}
 \end{figure}
+
+Utworzona SubVi jako wejście przyjmuje string wzorcowowy zawierającego nazwę pliku (File name) oraz jako wyjście oddaje wynik czyli UserName.
+Dodatkowo w celu kontroli nad pracą programu zostały dodane tablice: Porównanie (subarray) wyświetla ona nazwy wszystkich plików dostępnych w bazie oraz Data, która zwraca
+całą zawartość bazy danych. Konieczne również było podłączenie z bazą poprzez wygenerowany link. Takowy link był wybierany w polu connection information, 
+jednakże zostało to zastąpione przez ścieżkę względną.
 
 \begin{figure}[H]
     \centering
@@ -529,6 +548,14 @@ osoby próbującej się zalogować.
     \caption{Obraz przedstawiający Front Panel }
     \label{fig:first-att}
 \end{figure}
+
+Block Diagram składa się z prostych trzech bloków DB Tools potrzebnych do poprawnego odczytu informacji z bazy danych (Open Connection, Select Data, Close Connection).
+Natomiast aby spełnić główne założenie SubVi niezbędne było dodanie funkcji sprawdzającej.
+Elementy z bazy zostają odpowiednio wyselekcjonowane najpierw przez blok Database variant to data a następnie Index Array w celu wydobycia tylko jednej kolumny czyli Nazwa pliku.
+Problem jednak pojawia się przy porównywaniu otrzymanej kolumny z wartością wzorcową File name otrzymaną z Pythona. Elementy w bazie danych oprócz nazwy plików zawierają znaki białe więc ich
+usunięcie było konieczne do porównywania obydwu wyników. Dlatego więc wykorzystano funkcję for oraz blok trim whitespace. Funkcja iteruje po każdym wierszu z kolumny usuwając znaki białe.
+Po takim zabiegu, porównywanie działa poprawnie i przy użyciu funkcji case zwracany jest UserName osoby dla której ścieżka do pliku okazała się być zgodna z tym co zwrócił skrypt w Pythonie a
+wynik jest wyświetlany na ekranie głównym aplikacji.
 
 \begin{figure}[H]
     \centering
@@ -539,42 +566,67 @@ osoby próbującej się zalogować.
 
 \subsubsection{\large Wykorzystanie SubVi DatabaseWrite}
 
+Implementacja SubVi DatabaseWrite jest stosunkowo najłatwiejsza w porównaniu do reszty SubVi. Specjalnie do tego celu został zmodyfikowany stan Add User: Grab Input Image.
+Przygotowana SubVi, tak jak stan, ma na celu dodanie nowego użytkownika a do pliku zostaje zapisane zdjęcie, które będzie wzorcem dla programu, jego nazwa to imie (Name) i Nazwisko (Surname) w formacie .jpg
+wpisane przez użytkownika. Natomiast do bazy przesyłane są takie informacje jak imię, nazwisko oraz nazwa pliku, który został zapisany w odpowiednim rozszerzeniu.
+Dodatkowo w celu uniknięcia zawieszenia aplikacji zastosowano rozwiązanie polegające na przesłaniu odpowiedniego stanu w kolejce. 
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{src/Database/Database_write.png}
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_write.png}
     \caption{Obraz przedstawiający implemenctację SubVi w maszynie stanów}
     \label{fig:first-att}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{src/Database/Database_write_subvi_frontpanel.png}
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_write_subvi_frontpanel.png}
     \caption{Obraz przedstawiający Front Panel}
     \label{fig:first-att}
 \end{figure}
 
+Przygotowana struktura case w Block Diagram ma na celu zapobieganie zawieszanie się programu. Przy takim rozwiązaniu wpisanie danych do bazy
+nastąpi tylko wtedy gdy zostanie wciśnięty przycisk Save biometrics. W momencie, gdy nie było struktury case, nowy użytkownik był wpisywany ciągle, niezależnie od stanu przycisku
+a program zawieszał się.
+Funkcja składa się z trzech bloków DB Tools (Open Connection, Insert Data, Close Connection). W miejscu insert data przyjmowana jest nazwa tabeli, nazwy kolumn oraz wartości jakie mają zostać dodane.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{src/Database/Database_write_subvi.png}
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_write_subvi.png}
     \caption{Obraz przedstawiający Block Diagram}
     \label{fig:first-att}
 \end{figure}
 
 \subsubsection{\large Wykorzystanie SubVi DatabaseUpdate}
 
+Wykorzystanie SubVi DatabaseUpdate stanowiło największe wyzwanie ze względu na swoją złożoność i logikę w Block Diagram. Zmodyfikowano Face ID: Control Panel o nowy Event
+Manage input data: Value change. SubVi read przyjmuje jako wejście dwie wartości: NameDisplay czyli imie jakie jest aktualnie wyświetlane na ekranie głównym oraz pole input, które 
+służy do prostej obsługi danych w aplikacji.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{src/Database/Database_update.png}
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_update.png}
     \caption{Obraz przedstawiający implemenctację SubVi w maszynie stanów}
     \label{fig:first-att}
 \end{figure}
 
+Front panel zawiera takie elementy jak Imie czyli dana jaka jest przekazywana po zalogowaniu przez użytkownika, Input czyli pole na wpisanie dowolnej formuły indywidualnie przez użytkownika,
+Numer wiersza jest on konieczny do poprawnego zlokalizowania komórki przez program, Final Data czyli tablica pokazująca tablicę bazy danych po zmianach oraz Initial Data czyli tablica pokazująca
+dane przed zmianą.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{src/Database/Database_update_subvi_frontpanel.png}
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_update_subvi_frontpanel.png}
     \caption{Obraz przedstawiający Front Panel}
     \label{fig:first-att}
 \end{figure}
+
+Przedstawiona SubVi jest zmodyfikowaną wersją dostarczonego przez producenta przykładu do użycia bloku DB Tools Update Data. Składa się ona z wielu elementów lecz główna logika dzieje się w górnej części.
+Tak jak w przypadku poprzednich SubVi, dane z bazy są pobierane przez bloki (Open Connection, Select Data, Varian To Data, Tools List Columns), aby móc porównać elementy z komórek konieczne było wykorzystanie
+funkcji for do iterowania przez każdy element tablicy tak jak w przypadku SubVi DataBaseRead. Gdy program wykrył zgodność wyświetlanego imienia wraz z elementem w bazie, dalej przesyłany zostaje numer iteracji,
+który będzie jednocześnie numerem wiersza (indeksu) w bazie. Ten numer przekazywany jest do bloków Index Array i dzięki ich pomocy, jest możliwa zmiana wartości bloku input dla konkretnego użytkownika.
+Aby wszystko mogło poprawnie działać, konieczne jest jeszcze wykorzystanie polecenia SQL mającego na celu zamienienie wartości w komórkach kolumny input.
+Dodatkowo cały proces przed i po wyświetlany jest podwójne użycie funkcji for na początku i końcu programu.
 
 \begin{figure}[H]
     \centering
@@ -617,6 +669,8 @@ Odpowiada on za obsługę oraz wyświetlenie całej struktury na interfejsie uż
     \label{fig:tab-control-page}
 \end{figure}
 
+
+
 \subsection{\Large Wywoływanie skryptów Python z poziomu LabVIEW}
 
 % --------------------------------------------------------
@@ -636,6 +690,59 @@ Odpowiada on za obsługę oraz wyświetlenie całej struktury na interfejsie uż
 %
 % Status: 
 % --------------------------------------------------------
+
+Głównym problemem przy połączeniu z bazą danych była manipulacja oraz porównywanie komórek w tablicy z wartościami dostarczanymi przez aplikację LabView.
+
+\subsubsection{\large Problem związany z porównywaniem wartości w SubVi DatabaseRead}
+Problem pojawił się przy porównywaniu odczytanej kolumny z bazy danych z wartością wzorcową File name otrzymaną z Pythona. Elementy w bazie danych oprócz nazwy plików zawierają znaki białe a ich ilość
+jest definiowana przy tworzeniu tablicy za pomocą typu danych chart. Jednakże długość pliku jaka będzie powstawawać przy tworzeniu użytkownika jest ciężka do przewidzenia więc konieczne było
+usunięcie znaków białych. Dlatego więc wykorzystano funkcję for oraz blok trim whitespace, funkcja iteruje po każdym wierszu z kolumny usuwając znaki białe.
+Po takim zabiegu, porównywanie działa poprawnie i przy użyciu funkcji case zwracany jest UserName osoby dla której ścieżka do pliku okazała się być zgodna z tym co zwrócił skrypt w Pythonie a
+wynik jest wyświetlany na ekranie głównym aplikacji.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/Database/Fragment_DatabaseRead.png}
+    \caption{Fragment rozwiązania problemu usuwania białych znaków w SubVi DatabaseRead}
+    \label{fig:tab-control-page}
+\end{figure}
+
+\subsubsection{\large Problem z ciągłą generacją nowych użytkowników w SubVi DatabaseWrite}
+
+Problem polegał tym, że przy wejściu w zakładkę Add User, program automatycznie uruchamiał SubVi DatabaseWrite i nowy użytkownik był ciągle wpisywany z częstotliwością działania programu nawet jeśli pole do wpisywania
+było puste. Zostało to rozwiązane w sposób następujący, do bloku SubVi jako wejście dodano stan kolejki a do samej SubVi strukturę case. W momencie wciśnięcia przycisku Save biometrics
+SubVi odpowiedzialne za przechwycenie i zapisanie zdjęcia przesyła również informację o stanie kolejki, jeżeli faktycznie stan zwrócony Face ID: Stop Grab Image się zgadza to program ma wywołać stan 
+Add User: Stop Grab Image. Ten stan również jest przesyłany do SubVi, która sprawdza czy taki stan się pojawił i dopiero wtedy jednokrotnie zostanie wywołana co zapobiegło ciągłemu wpisywaniu użytkowników
+do bazy i zawieszaniu się programu.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{src/Database/Write_spam.png}
+    \caption{Fragment tablicy w bazie danych przedstawiający ciągłe dodawanie nowego użytkownika}
+    \label{fig:tab-control-page}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/Database/Database_write_subvi.png}
+    \caption{Obraz przedstawiający zastosowanie struktury case w SubVi DatabaseWrite}
+    \label{fig:first-att}
+\end{figure}
+
+\subsubsection{\large Problem logiczny związany z wydobyciem informacji o wierszu w SubVi DatabaseUpdate}
+
+Wykorzystanie gotowego przykładu użycia bloku DB Tools Update Data wiązało się z modyfikacją struktury pod własną tabelę bazy danych.
+Konieczne było przesłanie informacji do bloku dla jakiego użytkownika należy zmienić wartości komórki Input. Po analizie programu nasunęły się wnioski
+odnośnie, tego iż potrzebny jest indeks wiersza w celu poprawnego zlokalizowania komórki. Aby uzyskać indeks wiersza konieczne było wykorzystanie funkcji for, 
+która iterując przez każdy element tabeli porównywała imie wyświetlane po udanym logowaniu z imieniem z bazy. Gdy takie imie zostało odnalezione 
+to przesłany zostaje numer iteracji funkcji for dla, której wynik znaleziono. Uzyskany numer iteracji jest jednocześnie numerem indeksu odpowiadający danej osobie.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/Database/Update_iteration.png}
+    \caption{Obraz przedstawiający pozyskiwanie informacji o indeksie osoby w SubVi DatabaseUpdate}
+    \label{fig:first-att}
+\end{figure}
 
 \section{\LARGE Podsumowanie}
 
