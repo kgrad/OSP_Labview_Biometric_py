@@ -701,8 +701,19 @@ Odpowiada on za obsługę oraz wyświetlenie całej struktury na interfejsie uż
 %
 % TODO: Opisać problemy napotkane podczas prób wywołania skryptów LabView z poziomu LabView
 %
-% Status: 
+% Status: 100%
 % --------------------------------------------------------
+Pierwszym wyzwaniem było wybranie odpowiedniej wersji Pythona, kompatybilnej z używaną wersją LabVIEW. Sprawdzono która wersja najlepiej odpowiada wymaganiom i jest kompatybilna z face recognition i OpenCV. Po kilku próbach i testach wybrano wersję, która działała bezproblemowo z LabVIEW.
+
+Kolejnym problemem było dostosowanie kodu Pythona do wymagań LabVIEW. Kod musiał zostać przebudowany, aby funkcje były jasno zdefiniowane za pomocą „def”, co umożliwiło ich wywoływanie z poziomu LabVIEW. Wprowadzono odpowiednie modyfikacje i przetestowano nowe funkcje, aby upewnić się, że działają poprawnie w środowisku LabVIEW.
+
+Ostatnim wyzwaniem było podłączenie odpowiednich bloków w LabVIEW i stworzenie subVI, które realizowałoby całą operację wykonania skryptu Pythona.  Po kilku iteracjach i testach stworzono subVI, które działało poprawnie, umożliwiając płynne wykonywanie operacji Pythona z poziomu LabVIEW.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{src/python-v.png}
+    \caption{Kompatybilność wersji pythona z wersjami Labview}
+    \label{fig:python-version}
+\end{figure}
 
 \subsection{\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}
 
