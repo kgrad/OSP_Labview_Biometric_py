@@ -395,9 +395,9 @@ Funkcja \texttt{find\_face\_encodings} jest kluczowym elementem systemu rozpozna
 
 Pierwszym elementem dodania nowego użytkownika do bazy danych znanych użytkowników jest inicjalizacja kamery. Stan ten jest bliźniaczo podobny do stanu Face ID: Grab Image Init, dlatego też nie będzie ponownie szczegółowo opisywany. 
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics*[width=1.0\textwidth]{src/add-user/add-user-init.png}
+    \includegraphics*[width=1.0\textwidth]{src/add-user/add-init.png}
     \caption{Obraz przedstawiający schemats blokowy realizujący inicjalizację kamery}
     \label{fig:add-user-init}
 \end{figure}
@@ -414,14 +414,14 @@ Różnica występuje również w sposobie przekazania kolejnego stanu do kolejki
 
 Jeśli blok zwróci stan \textit{"Face ID: Stop Grab Image"}, podczas operacji porównania zostanie zwrócona wartość \texttt{True}, co wpłynie na selektor, który doda do kolejki stan \textit{"Add User: Stop Grab Image"}.
 
-% \begin{figure}
-%     \centering
-%     \includegraphics*[keyvals]{imagefile}
-%     \caption{Obraz przedstawiający stan Add User: Grab Input Image}
-%     \label{fig:add-user-grab}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/add-user/add-grab.png}
+    \caption{Obraz przedstawiający stan Add User: Grab Input Image}
+    \label{fig:add-user-grab}
+\end{figure}
 
-\subsubsection*{\large Stan Add User: Stop Grab Image}
+\subsubsection{\large Stan Add User: Stop Grab Image}
 
 
 Stan ten jest zbliżony do stanu \textit{Face ID: Stop Grab Image}, z tą różnicą, że do kolejki przekazywany jest inny stan, mianowicie \textit{Face ID: Control Panel}, zamiast stanu \textit{Face ID: Image Processing}. Jest to spowodowane koniecznością uniknięcia weryfikacji tożsamości podczas dodawania nowego użytkownika, co byłoby nielogiczne.
@@ -431,11 +431,11 @@ Podczas tego stanu, proces zapisu pliku został zmodyfikowany w zakresie paramet
 Warto podkreślić użycie bloku \textit{String to Path}, który jest dostarczany w standardzie LabVIEW. Blok ten przekształca typ \textit{String} na typ \textit{Path}, co zapewnia zgodność typu zmiennej przekazywanej na wejście bloku \textit{Path Builder} z oczekiwanym typem.
 
 
-% \begin{figure}
-%     \centering
-%     \includegraphics*[keyvals]{imagefile}
-%     \caption{Obraz przedstawiający stan Add User: Stop Grab Image}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{src/add-user/add-stop.png}
+    \caption{Obraz przedstawiający stan Add User: Stop Grab Image}
+\end{figure}
 
 \subsection{\Large Implementacja połączenia aplikacji z bazą danych}
 

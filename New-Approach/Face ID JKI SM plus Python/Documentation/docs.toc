@@ -21,17 +21,18 @@
 \contentsline {subsection}{\numberline {2.6.}\Large Implementacja procesu dodawania użytkownika}{14}{}%
 \contentsline {subsubsection}{\numberline {2.6.1.}\large Stan Add User: Input Image Init}{14}{}%
 \contentsline {subsubsection}{\numberline {2.6.2.}\large Stan Add User: Grab Input Image}{15}{}%
-\contentsline {subsection}{\numberline {2.7.}\Large Implementacja połączenia aplikacji z bazą danych}{15}{}%
-\contentsline {subsubsection}{\numberline {2.7.1.}\large Generowanie linku do bazy danych}{16}{}%
-\contentsline {subsubsection}{\numberline {2.7.2.}\large Wykorzystanie SubVi DatabaseRead}{20}{}%
-\contentsline {subsubsection}{\numberline {2.7.3.}\large Wykorzystanie SubVi DatabaseWrite}{22}{}%
-\contentsline {subsubsection}{\numberline {2.7.4.}\large Wykorzystanie SubVi DatabaseUpdate}{23}{}%
-\contentsline {subsection}{\numberline {2.8.}\Large Instrukcja korzystania z aplikacji}{25}{}%
-\contentsline {section}{\numberline {3.}\LARGE Napotkane problemy}{25}{}%
-\contentsline {subsection}{\numberline {3.1.}\Large Implementacja zakładek}{25}{}%
-\contentsline {subsection}{\numberline {3.2.}\Large Wywoływanie skryptów Python z poziomu LabVIEW}{26}{}%
-\contentsline {subsection}{\numberline {3.3.}\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}{27}{}%
-\contentsline {subsubsection}{\numberline {3.3.1.}\large Problem związany z porównywaniem wartości w SubVi DatabaseRead}{27}{}%
-\contentsline {subsubsection}{\numberline {3.3.2.}\large Problem z ciągłą generacją nowych użytkowników w SubVi DatabaseWrite}{27}{}%
-\contentsline {subsubsection}{\numberline {3.3.3.}\large Problem logiczny związany z wydobyciem informacji o wierszu w SubVi DatabaseUpdate}{28}{}%
-\contentsline {section}{\numberline {4.}\LARGE Podsumowanie}{29}{}%
+\contentsline {subsubsection}{\numberline {2.6.3.}\large Stan Add User: Stop Grab Image}{15}{}%
+\contentsline {subsection}{\numberline {2.7.}\Large Implementacja połączenia aplikacji z bazą danych}{16}{}%
+\contentsline {subsubsection}{\numberline {2.7.1.}\large Generowanie linku do bazy danych}{17}{}%
+\contentsline {subsubsection}{\numberline {2.7.2.}\large Wykorzystanie SubVi DatabaseRead}{21}{}%
+\contentsline {subsubsection}{\numberline {2.7.3.}\large Wykorzystanie SubVi DatabaseWrite}{23}{}%
+\contentsline {subsubsection}{\numberline {2.7.4.}\large Wykorzystanie SubVi DatabaseUpdate}{24}{}%
+\contentsline {subsection}{\numberline {2.8.}\Large Instrukcja korzystania z aplikacji}{26}{}%
+\contentsline {section}{\numberline {3.}\LARGE Napotkane problemy}{26}{}%
+\contentsline {subsection}{\numberline {3.1.}\Large Implementacja zakładek}{26}{}%
+\contentsline {subsection}{\numberline {3.2.}\Large Wywoływanie skryptów Python z poziomu LabVIEW}{27}{}%
+\contentsline {subsection}{\numberline {3.3.}\Large Wykonanie działającego połączenia aplikacji z bazą danych SQL}{28}{}%
+\contentsline {subsubsection}{\numberline {3.3.1.}\large Problem związany z porównywaniem wartości w SubVi DatabaseRead}{28}{}%
+\contentsline {subsubsection}{\numberline {3.3.2.}\large Problem z ciągłą generacją nowych użytkowników w SubVi DatabaseWrite}{28}{}%
+\contentsline {subsubsection}{\numberline {3.3.3.}\large Problem logiczny związany z wydobyciem informacji o wierszu w SubVi DatabaseUpdate}{29}{}%
+\contentsline {section}{\numberline {4.}\LARGE Podsumowanie}{30}{}%
