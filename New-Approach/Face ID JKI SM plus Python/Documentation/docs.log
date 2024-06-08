@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.5.26)  5 JUN 2024 10:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.5.26)  8 JUN 2024 12:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -529,11 +529,11 @@ File: src/Database/Database_write_subvi.png Graphic file (type png)
 Package pdftex.def Info: src/Database/Database_write_subvi.png  used on input line 595.
 (pdftex.def)             Requested size: 409.71692pt x 185.83806pt.
  [23 <./src/Database/Database_write.png> <./src/Database/Database_write_subvi_frontpanel.png>]
-<src/Database/Database_update.png, id=155, 1394.96156pt x 882.29625pt>
+<src/Database/Database_update.png, id=155, 1801.48032pt x 927.465pt>
 File: src/Database/Database_update.png Graphic file (type png)
 <use src/Database/Database_update.png>
 Package pdftex.def Info: src/Database/Database_update.png  used on input line 608.
-(pdftex.def)             Requested size: 409.71692pt x 259.14427pt.
+(pdftex.def)             Requested size: 409.71692pt x 210.93494pt.
 <src/Database/Database_update_subvi_frontpanel.png, id=156, 1373.88281pt x 657.95813pt>
 File: src/Database/Database_update_subvi_frontpanel.png Graphic file (type png)
 <use src/Database/Database_update_subvi_frontpanel.png>
@@ -611,7 +611,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  57i,7n,65p,1208b,355s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1440.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1728.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1728.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx2488.pk> <C:\Users\obiwa\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm2488.pk>
-Output written on docs.pdf (31 pages, 2142287 bytes).
+Output written on docs.pdf (31 pages, 2155100 bytes).
 PDF statistics:
  766 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

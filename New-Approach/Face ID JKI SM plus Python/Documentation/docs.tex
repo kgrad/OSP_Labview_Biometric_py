@@ -294,7 +294,7 @@ Ostatnim elementem znajdującym się na schemacie jest blok "Bundle By Name", kt
 
 \subsubsection*{Take Image Case Struct - SubVi}
 
-Jak wspomniano wcześniej, powyższy SubVi odpowiada za logikę pobrania zdjęcia. Ze względu na dbałość o czyistość i przejrzystość kodu w przypadku dużej ilości bloków, należy starać się wyodrębnić część bloków do SubVi właśnie. Naturalnie wejścia oraz wyjścia są takie same jak opisane wyżej, dlatego nie będą ponownie wyszczególniane. 
+Jak wspomniano wcześniej, powyższy SubVi odpowiada za logikę pobrania zdjęcia. Ze względu na dbałość o czystość i przejrzystość kodu w przypadku dużej ilości bloków, należy starać się wyodrębnić część bloków do SubVi właśnie. Naturalnie wejścia oraz wyjścia są takie same jak opisane wyżej, dlatego nie będą ponownie wyszczególniane. 
 
 Rdzeniem tego SubVi jest struktura Case, która na podstawie stanu przycisku odpowiednio wykonuje stan True lub False. 
 Jeśli stan przycisku jest równy False, obraz jest pobierany przez blok "Get Image2", a następnie przekazywany na wyjście wraz z trwającą sesją kamery. Natomiast do kolejki zostaje przekazany stan "Face ID: Grab Image", co oznacza zapętlenie maszyny stanów w tym stanie dopóki nie nastąpi naciśnięcie przycisku "Exit" kończącego działanie całej aplikacji lub nie zostanie naciśnięty przycisk logowania. 
@@ -486,7 +486,7 @@ osoby próbującej się zalogować.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{src/Database/Stage4.png}
-    \caption{Wporwadzenie informacji o logowaniu na serwer}
+    \caption{Wprowadzenie informacji o logowaniu na serwer}
     \label{fig:first-att}
 \end{figure}
 
@@ -516,7 +516,7 @@ osoby próbującej się zalogować.
 \newpage
 \subsubsection{\large Wykorzystanie SubVi DatabaseRead}
 
-W celu poprawnego wyświetlenia informacji zwrotnej, kto aktualnie został zalogowany, konieczne było przygotowanie odpowodniej
+W celu poprawnego wyświetlenia informacji zwrotnej, kto aktualnie został zalogowany, konieczne było przygotowanie odpowiedniej
 SubVi. Jej zadaniem jest przechwycenie informacji zwrotnej uzyskanej przez skrypt w pythonie i porównanie jej z dostępnymi osobami w bazie. 
 
 \begin{figure}[H]
@@ -703,7 +703,7 @@ Odpowiada on za obsługę oraz wyświetlenie całej struktury na interfejsie uż
 %
 % Status: 100%
 % --------------------------------------------------------
-Pierwszym wyzwaniem było wybranie odpowiedniej wersji Pythona, kompatybilnej z używaną wersją LabVIEW. Sprawdzono która wersja najlepiej odpowiada wymaganiom i jest kompatybilna z face recognition i OpenCV. Po kilku próbach i testach wybrano wersję, która działała bezproblemowo z LabVIEW.
+Pierwszym wyzwaniem było wybranie odpowiedniej wersji Pythona, kompatybilnej z używaną wersją LabVIEW. Sprawdzono która wersja najlepiej odpowiada wymaganiom i jest kompatybilna z face recognition i OpenCV (Python 3.10 i niżej), konieczne również było aby wersja Pythona zgadzała się z wersją bitową LabView (w przypadku projektu było to 64 i 64 bit). Po kilku próbach i testach wybrano wersję, która działała bezproblemowo z LabVIEW.
 
 Kolejnym problemem było dostosowanie kodu Pythona do wymagań LabVIEW. Kod musiał zostać przebudowany, aby funkcje były jasno zdefiniowane za pomocą „def”, co umożliwiło ich wywoływanie z poziomu LabVIEW. Wprowadzono odpowiednie modyfikacje i przetestowano nowe funkcje, aby upewnić się, że działają poprawnie w środowisku LabVIEW.
 
